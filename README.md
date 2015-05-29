@@ -12,19 +12,20 @@ $ npm install --save etcl
 
 # Usage
 Chrysalis is a framework designed to ease the process of data migration and manipulation.  It is built off the concept of ETL (Extract, Transform, Load).  In order to function, Chrysalis requires 3 modules:
-- Extractor - [http-extractor]
+- Extractor - [https://github.com/APPrise-Mobile/http-extractor]
 - Transformer - [https://github.com/APPrise-Mobile/chryformer]
-- Loader - [http-loader]
+- Comparator - [https://github.com/APPrise-Mobile/array-comparator]
+- Loader - [https://github.com/APPrise-Mobile/rest-loader]
 
 ```js
 var Chrysalis = require('chrysalis');
 var HTTPExtractor = require('http-extractor');
 var Chryformer = require('chryformer');
-var HTTPLoader = requrie('http-loader');
+var RESTLoader = requrie('rest-loader');
 
 var extractor = HTTPExtractor('http://somesourceurl.com');
 var chryformer = Chryformer({sourceKey: 'destinationKey'});
-var loader = HTTPLoader('http://somedestinationurl.com');
+var loader = RESTLoader('http://somedestinationurl.com');
 
 var chrysalis = Chrysalis();
 chrysalis.setExtractor(extractor);
